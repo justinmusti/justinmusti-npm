@@ -1,5 +1,5 @@
 {
-  "name": "utils",
+  "name": "@justinmusti/utils",
   "version": "0.0.1",
   "description": "JustinMusti Node and Browser unified storage.",
   "type": "module",

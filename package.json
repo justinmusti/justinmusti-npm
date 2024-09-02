@@ -26,8 +26,8 @@
   },
   "homepage": "https://github.com/justinmusti/jm-node#readme",
   "workspaces": [
-    "storage",
-    "utils"
+    "packages/storage",
+    "packages/utils"
   ],
   "devDependencies": {
     "prettier": "3.3.3",

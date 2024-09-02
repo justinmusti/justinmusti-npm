@@ -1,5 +1,5 @@
 import StorageBase from "../blueprints/storage"
-import { isJson } from "utils"
+import { isJson } from "@justinmusti/utils"
 
 export default class Storage extends StorageBase {
     engine: typeof localStorage

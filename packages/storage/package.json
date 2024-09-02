@@ -1,5 +1,5 @@
 {
-  "name": "storage",
+  "name": "@justinmusti/storage",
   "version": "0.0.1",
   "description": "JustinMusti Node and Browser unified storage.",
   "type": "module",
@@ -35,6 +35,6 @@
   },
   "homepage": "https://github.com/justinmusti/jm-node#readme",
   "dependencies": {
-    "utils": "file:../utils"
+    "@justinmusti/utils": "*"
   }
 }
