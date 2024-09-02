@@ -1,0 +1,36 @@
+{
+  "name": "justinmusti",
+  "version": "0.0.1",
+  "description": "JustinMusti General Packages",
+  "scripts": {
+    "build": "tsc --skipLibCheck",
+    "build2": "esbuild src/*.ts --platform=node --packages=external --outfile=./dist/out.js",
+    "build3": "esbuild src/*.ts --bundle --outfile=./dist/out.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justinmusti/jm-node.git"
+  },
+  "keywords": [
+    "justinmusti",
+    "storage",
+    "Node",
+    "Browser",
+    "localStrorage"
+  ],
+  "author": "justinmusti",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/justinmusti/jm-node/issues"
+  },
+  "homepage": "https://github.com/justinmusti/jm-node#readme",
+  "workspaces": [
+    "storage",
+    "utils"
+  ],
+  "devDependencies": {
+    "prettier": "3.3.3",
+    "typescript": "^5"
+  }
+}

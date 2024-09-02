@@ -1,0 +1,40 @@
+{
+  "name": "storage",
+  "version": "0.0.1",
+  "description": "JustinMusti Node and Browser unified storage.",
+  "type": "module",
+  "main": "./dist/node/index.js",
+  "devDependencies": {
+    "@types/node": "^22.5.2",
+    "typescript": "^5.5.4"
+  },
+  "exports": {
+    "node": "./dist/node/index.js",
+    "browser": "./dist/browser/index.js",
+    "default": "./dist/browser/index.js"
+  },
+  "scripts": {
+    "build": "tsc -p ./tsconfig.json  --skipLibCheck",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justinmusti/jm-node.git"
+  },
+  "keywords": [
+    "FileLib.com",
+    "JavaScript",
+    "Client",
+    "resumable",
+    "upload"
+  ],
+  "author": "JustinMusti",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/justinmusti/jm-node/issues"
+  },
+  "homepage": "https://github.com/justinmusti/jm-node#readme",
+  "dependencies": {
+    "utils": "file:../utils"
+  }
+}
