@@ -1,17 +1,18 @@
 {
   "name": "justinmusti",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "JustinMusti General Packages",
+  "files": [
+    "README.md"
+  ],
   "scripts": {
     "build": "tsc --skipLibCheck",
-    "build2": "esbuild src/*.ts --platform=node --packages=external --outfile=./dist/out.js",
-    "build3": "esbuild src/*.ts --bundle --outfile=./dist/out.js",
     "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/justinmusti/jm-node.git"
+    "url": "git+https://github.com/justinmusti/justinmusti-npm.git"
   },
   "keywords": [
     "justinmusti",
@@ -23,9 +24,9 @@
   "author": "justinmusti",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/justinmusti/jm-node/issues"
+    "url": "https://github.com/justinmusti/justinmusti-npm/issues"
   },
-  "homepage": "https://github.com/justinmusti/jm-node#readme",
+  "homepage": "https://github.com/justinmusti/justinmusti-npm#readme",
   "workspaces": [
     "packages/storage",
     "packages/utils"

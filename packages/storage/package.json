@@ -4,8 +4,12 @@
   "description": "JustinMusti Node and Browser unified storage.",
   "type": "module",
   "main": "./dist/node/index.js",
+  "files": [
+    "./dist/*",
+    "README.md"
+  ],
   "dependencies": {
-    "@justinmusti/utils": "^0.0.01"
+    "@justinmusti/utils": "^0.0.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.10.0",
@@ -28,20 +32,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/justinmusti/jm-node.git"
+    "url": "git+https://github.com/justinmusti/justinmusti-npm.git"
   },
   "keywords": [
-    "FileLib.com",
-    "JavaScript",
-    "Client",
-    "resumable",
-    "upload"
+    "JustinMusti",
+    "Storage",
+    "Browser",
+    "Node",
+    "agnostic"
   ],
   "author": "JustinMusti",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/justinmusti/jm-node/issues"
+    "url": "https://github.com/justinmusti/justinmusti-npm/issues"
   },
-  "homepage": "https://github.com/justinmusti/jm-node#readme",
-
+  "homepage": "https://github.com/justinmusti/justinmusti-npm#readme"
 }
