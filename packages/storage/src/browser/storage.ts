@@ -1,11 +1,17 @@
-import StorageBase from "../blueprints/storage"
 import { isJson } from "@justinmusti/utils"
+import StorageBase from "../blueprints/storage"
 
+/**
+ * Provide a Storage class with unified functionality for browsers.
+ * Uses localStorage
+ *
+ * {@linkcode} https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+ */
 export default class Storage extends StorageBase {
     engine: typeof localStorage
 
-    constructor(name: string, prefix: string) {
-        super(name, prefix)
+    constructor() {
+        super()
         this.engine = localStorage
     }
 
