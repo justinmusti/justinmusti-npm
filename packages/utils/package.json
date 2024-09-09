@@ -1,6 +1,6 @@
 {
   "name": "@justinmusti/utils",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "private": false,
   "description": "JustinMusti convenience functions and classes library.",
   "type": "module",
