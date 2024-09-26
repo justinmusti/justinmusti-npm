@@ -1,6 +1,6 @@
 {
   "name": "@justinmusti/storage",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "JustinMusti Node and Browser unified storage.",
   "type": "module",
   "main": "./dist/node/index.js",
@@ -15,18 +15,21 @@
     "@eslint/js": "^9.10.0",
     "@types/eslint__js": "^8.42.3",
     "@types/node": "^22.5.2",
+    "copyfiles": "^2.4.1",
     "eslint": "^9.10.0",
     "prettier": "3.3.3",
     "typescript": "^5.5.4",
     "typescript-eslint": "^8.4.0"
   },
+  "types": "./dist/types.d.ts",
   "exports": {
-    "node": "./dist/node/index.js",
-    "browser": "./dist/browser/index.js",
-    "default": "./dist/browser/index.js"
+    ".": "./dist/index.js",
+    "./node": "./dist/node/index.js",
+    "./browser": "./dist/browser/index.js",
+    "./types": "./dist/types.d.ts"
   },
   "scripts": {
-    "build": "tsc -p ./tsconfig.json  --skipLibCheck",
+    "build": "rm -rf ./dist && copyfiles -u 1 \"src/**/*.d.ts\" dist &&  tsc -p ./tsconfig.json  --skipLibCheck",
     "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
