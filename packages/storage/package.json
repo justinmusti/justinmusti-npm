@@ -1,6 +1,6 @@
 {
   "name": "@justinmusti/storage",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "JustinMusti Node and Browser unified storage.",
   "type": "module",
   "main": "./dist/node/index.js",
@@ -23,7 +23,7 @@
   },
   "types": "./dist/types.d.ts",
   "exports": {
-    ".": "./dist/index.js",
+    ".": "./dist/browser/index.js",
     "./node": "./dist/node/index.js",
     "./browser": "./dist/browser/index.js",
     "./types": "./dist/types.d.ts"
