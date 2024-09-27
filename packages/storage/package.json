@@ -1,6 +1,6 @@
 {
   "name": "@justinmusti/storage",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "JustinMusti Node and Browser unified storage.",
   "type": "module",
   "main": "./dist/node/index.js",
