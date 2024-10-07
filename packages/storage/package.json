@@ -1,6 +1,6 @@
 {
   "name": "@justinmusti/storage",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "JustinMusti Node and Browser unified storage.",
   "type": "module",
   "main": "./dist/node/index.js",
@@ -22,6 +22,7 @@
     "typescript-eslint": "^8.4.0"
   },
   "types": "./dist/types.d.ts",
+  "typings": "./dist/types.d.ts",
   "exports": {
     ".": "./dist/browser/index.js",
     "./node": "./dist/node/index.js",
