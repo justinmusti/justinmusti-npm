@@ -1,3 +1,4 @@
+import { BrowserStorageOptions } from "~/types"
 import { isJson } from "@justinmusti/utils"
 import StorageBase from "../blueprints/storage"
 
@@ -10,17 +11,17 @@ import StorageBase from "../blueprints/storage"
 export default class Storage extends StorageBase {
     engine: typeof localStorage
 
-    constructor() {
-        super()
+    constructor({ prefix }: BrowserStorageOptions = {}) {
+        super({ prefix })
         this.engine = localStorage
     }
 
-    set(key: string, value: string) {
-        this.engine.setItem(key, value)
+    set<T = string>(key: string, value: T) {
+        this.engine.setItem(this.getKey(key), value as string)
     }
 
-    get<T = null>(key: string, defaultValue: string): T {
-        const out = (this.engine.getItem(key) ?? defaultValue) as T
+    get<T = null>(key: string, defaultValue?: T): T {
+        const out = (this.engine.getItem(this.getKey(key)) ?? defaultValue) as T
         if (isJson(out)) {
             return JSON.parse(out as string) as T
         }
@@ -28,11 +29,11 @@ export default class Storage extends StorageBase {
     }
 
     has(key: string): boolean {
-        return this.engine.getItem(key) === null
+        return this.engine.getItem(this.getKey(key)) !== null
     }
 
     unset(key: string) {
-        this.engine.removeItem(key)
+        this.engine.removeItem(this.getKey(key))
     }
 
     clear() {

@@ -1,9 +1,14 @@
+import { BrowserStorageOptions } from "~/types"
+
 /**
  * Provide a blueprint for storing key/value data.
  */
 export default abstract class StorageBase {
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    protected constructor() {}
+    prefix: string
+
+    protected constructor({ prefix = "" }: BrowserStorageOptions = {}) {
+        this.prefix = prefix
+    }
 
     /**
      * Retrieve and return the value of a given key from the storage.
@@ -19,7 +24,7 @@ export default abstract class StorageBase {
      * // https://filelib.com/upload/jawidahwdawd/ if key does not exist
      */
 
-    abstract get<T = null>(key: string, defaultValue: T | string): T
+    abstract get<T = null>(key: string, defaultValue?: T): T
 
     /**
      * Create an entry in the target storage.
@@ -33,7 +38,7 @@ export default abstract class StorageBase {
      * storage.set("token", "abcde")
      * // storage will now have the key token with value "abcde"
      */
-    abstract set(key: string, value: unknown): void
+    abstract set<T = string>(key: string, value: T): void
 
     /**
      * Check if the storage has the given key in it.
@@ -52,4 +57,11 @@ export default abstract class StorageBase {
      * Truncate the entire storage.
      */
     abstract clear(): void
+
+    getKey(key: string): string {
+        if (this.prefix) {
+            return `${this.prefix}${key}`
+        }
+        return key
+    }
 }

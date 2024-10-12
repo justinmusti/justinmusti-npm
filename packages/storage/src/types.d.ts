@@ -1,7 +1,5 @@
-
-
 export interface BrowserStorageOptions {
-    prefix: string
+    prefix?: string
 }
 
 export interface NodeStorageOptions extends BrowserStorageOptions {

@@ -1,9 +1,24 @@
 {
   "name": "@justinmusti/storage",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "JustinMusti Node and Browser unified storage.",
   "type": "module",
-  "main": "./dist/node/index.js",
+  "main": "./dist/browser/index.cjs",
+  "browser": "./dist/browser/index.cjs",
+  "types": "./dist/types.d.ts",
+  "typings": "./dist/types.d.ts",
+  "exports": {
+    ".": "./dist/browser/index.cjs",
+    "./node": "./dist/node/index.mjs",
+    "./browser": "./dist/browser/index.cjs",
+    "./types": "./dist/types.d.ts"
+  },
+  "scripts": {
+    "build-tsc": "rm -rf ./dist && copyfiles -u 1 \"src/**/*.d.ts\" dist &&  tsc -p ./tsconfig.json  --skipLibCheck",
+    "build": "rm -rf ./dist && copyfiles -u 1 \"src/**/*.d.ts\" dist &&  tsc-multi",
+    "lint": "eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "files": [
     "./dist/*",
     "README.md"
@@ -18,22 +33,11 @@
     "copyfiles": "^2.4.1",
     "eslint": "^9.10.0",
     "prettier": "3.3.3",
+    "tsc-multi": "^1.1.0",
     "typescript": "^5.5.4",
     "typescript-eslint": "^8.4.0"
   },
-  "types": "./dist/types.d.ts",
-  "typings": "./dist/types.d.ts",
-  "exports": {
-    ".": "./dist/browser/index.js",
-    "./node": "./dist/node/index.js",
-    "./browser": "./dist/browser/index.js",
-    "./types": "./dist/types.d.ts"
-  },
-  "scripts": {
-    "build": "rm -rf ./dist && copyfiles -u 1 \"src/**/*.d.ts\" dist &&  tsc -p ./tsconfig.json  --skipLibCheck",
-    "lint": "eslint .",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/justinmusti/justinmusti-npm.git"

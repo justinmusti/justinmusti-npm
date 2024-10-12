@@ -1,8 +1,12 @@
 {
   "compilerOptions": {
     // Enable latest features
-    "target": "es2015",
+//    "target": "es2015",
     "module": "es2015",
+//    "module": "esnext",
+//    "module": "ESNext",
+//    "moduleResolution": "bundler",
+    "target": "ESNext",
 
     "moduleDetection": "force",
     "allowJs": true,
@@ -33,7 +37,10 @@
     "typeRoots": [
       "node_modules/@types",
       "node_modules/@types/node"
-    ]
+    ],
+    "paths": {
+      "~/types": ["./src/types.d.ts"]
+    }
   },
   "include": ["./src/**/*"],
   "exclude": [
