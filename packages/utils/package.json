@@ -1,6 +1,6 @@
 {
   "name": "@justinmusti/utils",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "private": false,
   "description": "JustinMusti convenience functions and classes library.",
   "type": "module",
@@ -9,6 +9,8 @@
     "README.md"
   ],
   "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "typings": "./dist/index.d.ts",
   "devDependencies": {
     "@types/node": "^22.5.2",
     "typescript": "^5.5.4"

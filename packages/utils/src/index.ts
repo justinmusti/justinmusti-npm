@@ -31,7 +31,7 @@ export function groupArray<T = unknown>(arr: T[], n: number) {
 }
 
 /**
- * Generate and return a reproducable hash from a given string payload.
+ * Generate and return a reproducible hash from a given string payload.
  * Taken from the following StackOverflow answer.
  * {@link} https://stackoverflow.com/a/7616484
  * @param payload {string}  The data that would be sourced to generate the hash
@@ -46,4 +46,31 @@ export function genHash(payload: string): number {
         hash |= 0 // Convert to 32bit integer
     }
     return hash
+}
+
+/**
+ * Extract and return ascii characters only from given string.
+ *
+ * If no ASCII chars present, return empty string.
+ *
+ * @param str {string} Given string to extract ASCII characters from.
+ * @param characterPayload {string} Only extract if character exists in this.
+ * @return str excluding NON-ASCII characters.
+ * @returns string
+ */
+
+export function strToASCII(
+    str: string,
+    characterPayload = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-"
+): string {
+    let ascii = ""
+    str.split("").forEach((c) => {
+        const charCode = c.charCodeAt(0)
+        if (32 <= charCode && charCode <= 126) {
+            if (characterPayload.includes(c)) {
+                ascii += c
+            }
+        }
+    })
+    return ascii
 }
