@@ -1,5 +1,5 @@
 import * as fs from "node:fs"
-import { NodeStorageOptions } from "../types"
+import type { NodeStorageOptions } from "../types.d.ts"
 import StorageBase from "../blueprints/storage"
 
 export default class Storage extends StorageBase {
@@ -8,10 +8,13 @@ export default class Storage extends StorageBase {
 
     /**
      * Initialize Storage for Node.js.
-     * @param {string} path: file path that storage is going to be storing the data.
+     * @param { NodeStorageOptions } options Storage options.
+     * @param { path } options.path {string} file path that storage is going to be storing the data.
+     * @param { prefix } options.prefix {string} prefix to the key where values would be assigned to.
      */
-    constructor({ path, ...rest }: NodeStorageOptions) {
-        super({ ...rest })
+    constructor(options: NodeStorageOptions) {
+        const { path, prefix } = options
+        super({ prefix })
         if (!path) {
             throw new Error("path must be provided.")
         }

@@ -2,9 +2,9 @@
 
 import { Button, Flex, Stack, Text } from "@chakra-ui/react"
 
-import Storage from "@justinmusti/storage/browser"
-
 import { genHash, strToASCII } from "@justinmusti/utils"
+
+import Storage from "@justinmusti/storage/browser"
 
 // Don’t forget to keep the Uppy instance outside your component.
 

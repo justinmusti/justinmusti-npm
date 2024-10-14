@@ -1,4 +1,4 @@
-import { BrowserStorageOptions } from "~/types"
+import type { BrowserStorageOptions } from "../types.d.ts"
 
 /**
  * Provide a blueprint for storing key/value data.

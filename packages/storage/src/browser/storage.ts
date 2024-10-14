@@ -1,4 +1,4 @@
-import { BrowserStorageOptions } from "~/types"
+import type { BrowserStorageOptions } from "../types.d.ts"
 import { isJson } from "@justinmusti/utils"
 import StorageBase from "../blueprints/storage"
 

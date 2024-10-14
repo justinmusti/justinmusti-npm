@@ -1,27 +1,17 @@
 {
   "compilerOptions": {
     // Enable latest features
-//    "target": "es2015",
     "module": "es2015",
-//    "module": "esnext",
-//    "module": "ESNext",
-//    "moduleResolution": "bundler",
     "target": "ESNext",
-
-    "moduleDetection": "force",
+    "moduleDetection": "auto",
     "allowJs": true,
     "declaration": true,
     "esModuleInterop": true,
-
+    "resolvePackageJsonExports": true,
     // Bundler mode
-//    "moduleResolution": "bundler",
-    "moduleResolution": "node",
-//    "allowImportingTsExtensions": true,
-//    "verbatimModuleSyntax": true,
+    "moduleResolution": "bundler",
     "noEmit": false,
     "noEmitOnError": false,
-//    "customConditions": ["source"],
-
     // Best practices
     "strict": false,
     "skipLibCheck": true,
@@ -37,17 +27,17 @@
     "typeRoots": [
       "node_modules/@types",
       "node_modules/@types/node"
-    ],
-    "paths": {
-      "~/types": ["./src/types.d.ts"]
-    }
+    ]
   },
-  "include": ["./src/**/*"],
+  "include": [
+    "src",
+    "./src/**/*"
+  ],
   "exclude": [
     "./node_modules",
     "./node_modules/*",
     "./dist/",
     "./dist/*",
-    "./eslint.config.mjs",
+    "./eslint.config.mjs"
   ]
 }
